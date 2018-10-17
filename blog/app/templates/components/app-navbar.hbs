@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Blog</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <ul class="navbar-nav mr-auto">
+      {{#link-to 'application' class='nav-item nav-link'}}
+        Home
+      {{/link-to}}
+      {{#if session.isAuthenticated}}
+        {{#link-to 'posts' class='nav-item nav-link'}}
+          Posts
+        {{/link-to}}
+      {{/if}}
+    </ul>
+    <ul class="navbar-nav">
+      {{#if session.isAuthenticated}}
+        <a {{action 'invalidateSession'}}>Logout</a>
+      {{else}}
+        {{#link-to 'login'}}Login{{/link-to}}
+      {{/if}}
+    </ul>
+  </div>
+</nav>

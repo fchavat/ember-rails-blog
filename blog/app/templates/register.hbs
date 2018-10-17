@@ -1,0 +1,28 @@
+<div class="card text-center mx-auto mt-5" style="width: 18rem;">
+  <div class="card-header">
+    Register
+  </div>
+  <div class="card-body">
+    <form {{action 'register' on='submit'}}>
+      <div class='form-group'>
+        <label for="username">Username</label>
+        {{input id='username' class='form-control' placeholder='Enter username' value=model.username}}
+      </div>
+      <div class='form-group'>
+        <label for="email">Email</label>
+        {{input id='email' class='form-control' placeholder='Enter email' value=model.email}}
+      </div>
+      <div class='form-group'>
+        <label for="password">Password</label>
+        {{input id='password' class='form-control' placeholder='Enter Password' type='password' value=model.password}}
+      </div>
+      <button type="submit" class="btn btn-success">Register</button>
+    </form>
+  </div>
+  {{#each flashMessages.queue as |flash|}}
+    {{flash-message flash=flash}} <br>
+  {{/each}}
+  <div class='card-footer' id='loginFormRegisterSpan'>
+    Already have an account? {{#link-to 'login'}}Login{{/link-to}}
+  </div>
+</div>
