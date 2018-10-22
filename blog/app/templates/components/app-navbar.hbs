@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary bg-dark" id="navbar">
   <a class="navbar-brand" href="#">Blog</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -10,15 +10,16 @@
       {{/link-to}}
       {{#if session.isAuthenticated}}
         {{#link-to 'posts' class='nav-item nav-link'}}
-          Posts
+          Quotes
         {{/link-to}}
       {{/if}}
     </ul>
     <ul class="navbar-nav">
       {{#if session.isAuthenticated}}
-        <a {{action 'invalidateSession'}}>Logout</a>
+        {{#link-to 'profile' class="nav-item nav-link"}}My profile{{/link-to}}
+        <a {{action 'invalidateSession'}} class='nav-item nav-link'>Logout</a>
       {{else}}
-        {{#link-to 'login'}}Login{{/link-to}}
+        {{#link-to 'login' class='nav-item nav-link'}}Login{{/link-to}}
       {{/if}}
     </ul>
   </div>

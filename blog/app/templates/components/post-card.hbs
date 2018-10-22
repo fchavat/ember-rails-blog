@@ -1,0 +1,23 @@
+<h3 onMouseEnter={{action 'showEditIcon'}}
+    onMouseLeave={{action 'hideEditIcon'}}>
+  {{post.title}}
+  {{#if showEditIcon}}
+    {{fa-icon 'edit' class='edit-icon unchecked'}}
+  {{/if}}
+</h3>
+<hr/>
+<p>
+  <q>
+    {{post.content}}
+  </q>
+  <i>
+    <span>
+      By -
+      {{#link-to 'user' post.user}}
+        {{post.user.username}}
+      {{/link-to}}
+    </span>
+  </i>
+</p>
+<hr/>
+{{fa-icon 'star' class='unchecked'}}

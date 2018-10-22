@@ -1,0 +1,30 @@
+{{#if isCurrentUser}}
+  <div class="card-header">
+    My profile:
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <label for="username">Username</label>
+      {{input type="text" class="form-control" value=user.username}}
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      {{input type="text" class="form-control" value=user.email}}
+    </div>
+  </div>
+  <span> asdasd - {{user.following}}</span>
+{{else}}
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="user-info-tab" data-toggle="tab" href="#user-info" role="tab" aria-controls="user-info" aria-selected="true">Info</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="user-quotes-tab" data-toggle="tab" href="#user-quotes" role="tab" aria-controls="user-quotes" aria-selected="false">Quotes</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+
+  </div>
+{{/if}}

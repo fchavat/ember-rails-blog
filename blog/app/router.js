@@ -10,6 +10,9 @@ Router.map(function() {
   this.route('posts');
   this.route('login');
   this.route('register');
+  this.route('post', { path: '/post/:post_id' });
+  this.route('user', { path: '/user/:user_id' });
+  this.route('profile');
 });
 
 export default Router;

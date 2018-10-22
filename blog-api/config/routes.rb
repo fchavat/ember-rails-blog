@@ -15,5 +15,9 @@ Rails.application.routes.draw do
                 sessions: 'sessions',
                 registrations: 'registrations'
               }
-  resources :posts
+  resources :posts, only: %i[index show]
+  get '/users/me' => 'users#me'
+  get 'users/me/following' => 'users#current_following'
+  get 'users/me/followers' => 'users#current_followers'
+  resources :users, only: %i[show]
 end

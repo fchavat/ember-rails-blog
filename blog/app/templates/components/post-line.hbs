@@ -1,0 +1,8 @@
+<div class="card">
+  <div class="card-body">
+    {{#link-to 'post' post}}
+      <h2 class="card-title">{{post.title}}</h2> - By {{post.user.username}}
+      <p class="card-text">{{post.content}}</p>
+    {{/link-to}}
+  </div>
+</div>

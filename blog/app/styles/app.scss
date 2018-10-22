@@ -1,0 +1,48 @@
+@import "ember-bootstrap/bootstrap";
+
+body {
+  background-color: #0088CC !important;
+}
+
+a {
+  text-decoration: none;
+  color: #5a5a5a;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.alert {
+  font-size: 8pt;
+}
+
+// Post-card
+.post-card {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 15px;
+
+  .unchecked {
+    color: #c0c0c0;
+  }
+
+  .checked {
+    color: #f3dd38;
+  }
+
+  .edit-icon {
+    font-size: 12pt;
+
+    &:hover {
+      color: #7a7a7a;
+    }
+  }
+}
+
+// card-line
+.post-line {
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 15px;
+}

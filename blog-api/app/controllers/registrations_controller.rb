@@ -4,24 +4,12 @@ class RegistrationsController < Devise::RegistrationsController
   respond_to :json
 
   def create
-    byebug;
     build_resource(sign_up_params)
-
     resource.save
     if resource.errors.empty?
       render jsonapi: resource
     else
       render jsonapi_errors: resource.errors, status: :bad_request
-      # render json: {
-      #   errors: [
-      #     {
-      #       status: '400',
-      #       title: 'Bad Request',
-      #       detail: resource.errors,
-      #       code: '100'
-      #     }
-      #   ]
-      # }, status: :bad_request
     end
   end
 

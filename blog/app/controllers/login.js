@@ -7,12 +7,11 @@ export default Controller.extend({
   actions: {
     authenticate() {
       const credentials = { user: this.getProperties('username', 'password') };
-      const authenticator = 'authenticator:token';
+      const authenticator = 'authenticator:custom';
 
-      this.get('session').authenticate(authenticator, credentials)
-        .catch(error =>{
-          this.flashMessages.danger(error.json.error);
-        });
+      this.get('session').authenticate(authenticator, credentials).catch(error =>{
+        this.flashMessages.danger(error.json.error);
+      });
     }
   }
 });
